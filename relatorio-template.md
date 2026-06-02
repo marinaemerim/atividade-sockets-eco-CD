@@ -15,13 +15,13 @@ Descreva com suas palavras o que cada chamada abaixo faz e por que ela
 
 | Chamada | O que ela faz? |
 |---------|---------------|
-| `socket.socket(AF_INET, SOCK_STREAM)` | | ->  cria um socket da familia Internet (AF_INET) e do tipo stream, que utiliza conexoes TCP/IP. é necessaria para permitir a comunicacao em rede entre cliente e servidor.
-| `servidor_socket.bind((HOST, PORTA))` | | -> associa esse socket do servidor a uma porta e a um IP, é necessaria para definir o endereco que o servidor ficara disponivel para receber conexoes.
-| `servidor_socket.listen(5)` | | -> declara que o servidor esta pronto para receber conexoes e define que o tamanho maximo da fila de conexoes de cliente é 5.
-| `servidor_socket.accept()` | | -> bloqueia ate que haja um pedido de conexao, quando isso acontece aceita a nova conexao e retorna um novo socket para conversar com esse cliente.
-| `conn.recv(TAMANHO_BUFFER)` | | -> recebe dados enviados pelo cliente. o tamanho do buffer define a quantidade max de bytes que sera lida de uma vez.
-| `conn.sendall(resposta.encode("utf-8"))` | | -> envia resposta para o cliente. essa msg precisa ser codificada em bytes usando utf-8 antes de ser enviada.
-| `conn.close()` | | -> encerra a conexao com cliente quando a comunicacao termina e fecha socket.
+| `socket.socket(AF_INET, SOCK_STREAM)` | cria um socket da familia Internet (AF_INET) e do tipo stream, que utiliza conexoes TCP/IP. é necessaria para permitir a comunicacao em rede entre cliente e servidor. | 
+| `servidor_socket.bind((HOST, PORTA))` | associa esse socket do servidor a uma porta e a um IP, é necessaria para definir o endereco que o servidor ficara disponivel para receber conexoes.|
+| `servidor_socket.listen(5)` |declara que o servidor esta pronto para receber conexoes e define que o tamanho maximo da fila de conexoes de cliente é 5. | 
+| `servidor_socket.accept()` |bloqueia ate que haja um pedido de conexao, quando isso acontece aceita a nova conexao e retorna um novo socket para conversar com esse cliente. | 
+| `conn.recv(TAMANHO_BUFFER)` |recebe dados enviados pelo cliente. o tamanho do buffer define a quantidade max de bytes que sera lida de uma vez. | 
+| `conn.sendall(resposta.encode("utf-8"))` |envia resposta para o cliente. essa msg precisa ser codificada em bytes usando utf-8 antes de ser enviada. | 
+| `conn.close()` | encerra a conexao com cliente quando a comunicacao termina e fecha socket. | 
 
 ### 1.2 Cliente (`cliente.py`)
 
