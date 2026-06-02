@@ -1,0 +1,29 @@
+services:
+
+  servidor:
+    build: ./servidor
+    # O hostname "servidor" é o que o cliente usa para se conectar.
+    # O Docker resolve esse nome para o IP interno do contêiner na rede abaixo.
+    hostname: servidor
+    # A porta 5000 fica acessível apenas dentro da rede "rede-eco".
+    # Não é necessário publicá-la no host para esta atividade.
+    expose:
+      - "5000"
+    networks:
+      - rede-eco
+
+  cliente:
+    build: ./cliente
+    # O cliente só inicia depois que o contêiner do servidor estiver de pé.
+    depends_on:
+      - servidor
+    networks:
+      - rede-eco
+    # Mensagem padrão enviada ao servidor. Altere aqui para testar.
+    command: ["python", "cliente.py", "Olá, Sistemas Distribuídos!"]
+
+networks:
+  rede-eco:
+    # Rede bridge: isola os contêineres do resto do host,
+    # mas permite que eles se comuniquem entre si pelo hostname.
+    driver: bridge
