@@ -27,10 +27,10 @@ Descreva com suas palavras o que cada chamada abaixo faz e por que ela
 
 | Chamada | O que ela faz? |
 |---------|---------------|
-| `socket.socket(AF_INET, SOCK_STREAM)` | | -> cria socket TCP, que sera usado pelo cliente para se comunicar com o servidor.
-| `cliente_socket.connect((HOST_SERVIDOR, PORTA_SERVIDOR))` | | -> pede uma conexao ao servidor, utlizando IP e porta definidos. se aceita, estabelece conexao, se nao, fica bloqueado ou retorna erro, 
-| `cliente_socket.sendall(mensagem.encode("utf-8"))` | | -> envia msg ao servidor, antes de enviar codifica essa msg para bytes em utf-8.
-| `cliente_socket.recv(TAMANHO_BUFFER)` | | -> aguarda e recebe a resposta enviada pelo servidor.
+| `socket.socket(AF_INET, SOCK_STREAM)` | cria socket TCP, que sera usado pelo cliente para se comunicar com o servidor.| 
+| `cliente_socket.connect((HOST_SERVIDOR, PORTA_SERVIDOR))` | pede uma conexao ao servidor, utlizando IP e porta definidos. se aceita, estabelece conexao, se nao, fica bloqueado ou retorna erro | 
+| `cliente_socket.sendall(mensagem.encode("utf-8"))` |envia msg ao servidor, antes de enviar codifica essa msg para bytes em utf-8. |  
+| `cliente_socket.recv(TAMANHO_BUFFER)` |aguarda e recebe a resposta enviada pelo servidor. | 
 
 ### 1.3 Rede e contêineres
 
